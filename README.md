@@ -1,24 +1,24 @@
-# DDD AST
+# Indddy - the DDD indicator
 
 Find out whether your codebase is **Strongly Typed 💪** or _Stringly Typed 🤦🏻_
 
-## Why ?
+## Why?
 
 I believe that excellent code quality requires the developer to have a firm understanding
 of the business they implement.
 
-I believe a firm understanding of the business reflects in a meaningful typing of the code.
+A firm understanding of the business is reflected in the meaningful typing of the code.
 
 ## Principle
 
-The idea is to collect types used in the business logic code in order to compare it with the ubiquitous language.
+The idea is to collect types used in the business logic code to compare it with the ubiquitous language.
 
-With this insight the developer can quantify how much the codebase correctly models the problem to solve.
+With this insight, the developer can quantify how much the codebase correctly models the problem to solve.
 
 ## The tool
 
-ddd-ast uses [java-parser](https://github.com/jhipster/prettier-java/tree/master/packages/java-parser) to build Concrete Syntax Tree from Java files,
-collects types identifiers that describe:
+indddy uses [java-parser](https://github.com/jhipster/prettier-java/tree/master/packages/java-parser) to build Concrete Syntax Tree from Java files,
+collects type identifiers that describe:
 - fields
 - variables
 - parameters
