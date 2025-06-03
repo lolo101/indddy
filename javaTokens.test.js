@@ -1,10 +1,9 @@
 import {JavaTokens} from './javaTokens.js';
 
 describe('javaTokens.js', () => {
-    const config = {collect: ['unannType']};
 
     it('returns an empty array on empty input', () => {
-        const visitor = new JavaTokens('', config);
+        const visitor = new JavaTokens('');
         const identifiers = visitor.parse();
         expect(identifiers).toEqual([]);
     })
@@ -16,7 +15,7 @@ public class HelloWorldExample {
     }
 }
         `
-        const visitor = new JavaTokens(source, config);
+        const visitor = new JavaTokens(source);
         const identifiers = visitor.parse();
         expect(identifiers).toEqual([
             "ReturnType"
@@ -30,7 +29,7 @@ public class HelloWorldExample {
     }
 }
         `
-        const visitor = new JavaTokens(source, config);
+        const visitor = new JavaTokens(source);
         const identifiers = visitor.parse();
         expect(identifiers).toEqual([
             "ParameterType",
@@ -48,7 +47,7 @@ public class HelloWorldExample {
     }
 }
         `
-        const visitor = new JavaTokens(source, config);
+        const visitor = new JavaTokens(source);
         const identifiers = visitor.parse();
         expect(identifiers).toEqual([
             "VariableType",
@@ -65,7 +64,7 @@ public class HelloWorldExample {
     }
 }
         `
-        const visitor = new JavaTokens(source, config);
+        const visitor = new JavaTokens(source);
         const identifiers = visitor.parse();
         expect(identifiers).toEqual([
             "var",
@@ -80,7 +79,7 @@ public class HelloWorldExample {
     private void methodName() {}
 }
         `
-        const visitor = new JavaTokens(source, config);
+        const visitor = new JavaTokens(source);
         const identifiers = visitor.parse();
         expect(identifiers).toEqual([
             "InstanceVariable"
@@ -94,7 +93,7 @@ public class HelloWorldExample {
     private void methodName() {}
 }
         `
-        const visitor = new JavaTokens(source, config);
+        const visitor = new JavaTokens(source);
         const identifiers = visitor.parse();
         expect(identifiers).toEqual([
             "ClassVariable"
@@ -107,7 +106,7 @@ public class HelloWorldExample {
     private static ParamType<Type1, ParamType<Type2>> toto = null;
 }
         `
-        const visitor = new JavaTokens(source, config);
+        const visitor = new JavaTokens(source);
         const identifiers = visitor.parse();
         expect(identifiers).toEqual([
             "Type1",
@@ -121,7 +120,7 @@ public class HelloWorldExample {
     private static ParamType<? super Type1, ParamType<? extends Type2>> toto = null;
 }
         `
-        const visitor = new JavaTokens(source, config);
+        const visitor = new JavaTokens(source);
         const identifiers = visitor.parse();
         expect(identifiers).toEqual([
             "Type2",
