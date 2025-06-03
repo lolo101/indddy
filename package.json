@@ -13,7 +13,7 @@
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
   },
   "dependencies": {
-    "java-parser": "^2.2.0"
+    "java-parser": "^2.3.3"
   },
   "devDependencies": {
     "jest": "^29.7.0"
